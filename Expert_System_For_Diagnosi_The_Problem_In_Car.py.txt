@@ -1,0 +1,29 @@
+# Troubleshooting guide as a dictionary
+troubleshooting_guide = {
+    "engine won't start": "Check the battery connection or replace the battery.",
+    "engine overheats": "Check the coolant level of the radiator for leaks.",
+    "strange noise when braking": "Inspect the brake pads or rotors.",
+    "car pulls to one side while driving": "Check tire alignment or tire pressure.",
+    "unusual vibrations": "Inspect the tires for wear or balance issues.",
+    "dashboard warning light": "Refer to the car manual for the specific light indication.",
+    "poor fuel efficiency": "Check the air filter or fuel injectors.",
+    "difficulty shifting gears": "Inspect the transmission fluid level or clutch system."
+}
+
+# Function to diagnose car issue
+def diagnose_car_issue(symptom):
+    symptom = symptom.lower()
+    return troubleshooting_guide.get(symptom, "Sorry, I don't have a suggestion for that issue. Please consult a mechanic.")
+
+# User Interaction
+print("Welcome to the Car Troubleshooting System!")
+print("Here are some common issues you can ask about:")
+for issue in troubleshooting_guide.keys():
+    print(f"- {issue}")
+
+# Take user input
+user_symptom = input("\nDescribe the issue with your car: ").strip()
+
+# Diagnose and provide solution
+solution = diagnose_car_issue(user_symptom)
+print(f"\nDiagnosis: {solution}")
